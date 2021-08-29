@@ -40,7 +40,7 @@
                 </div>
                 <div class="col-xs-4 col-sm-4">
                   CVV
-                    <input type="text" class="form-control" id="cvv" name="cvv" maxlength="3" [(ngModel)]="cardCVVInput" (change)="getCVVInput($event)" (click)="cardFlipped=true;">                   
+                    <input type="text" class="form-control" id="cvv" name="cvv" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="3" [(ngModel)]="cardCVVInput" (change)="getCVVInput($event)" (click)="cardFlipped=true;">                   
                 </div>
               </div>
           </div>        
