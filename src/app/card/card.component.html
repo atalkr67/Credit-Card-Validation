@@ -1,0 +1,95 @@
+
+<div class="card" >
+  
+    <!-- <img class="cardImage img-fluid mx-auto d-block" src={{cardImage}} alt=""> -->
+
+    <!-- <div class="flip-box">
+      <div class="flip-box-inner">
+        <div class="flip-box-front">
+          <img class="cardImage img-fluid mx-auto d-block" src={{cardImage}} alt="">
+        </div>
+        <div class="flip-box-back">
+          <img class="cardImage img-fluid mx-auto d-block" src={{cardImage}} alt="">
+        </div>
+      </div>
+    </div> -->
+
+    <div class="label1" >
+      <div id="player" class="player" [class.voted]="flipped">
+        <div class="front">
+          <img class="cardImage img-fluid mx-auto d-block" src={{cardImage}} alt="">
+        </div>
+        <div class="back">
+          <img class="cardImage img-fluid mx-auto d-block" src={{cardImage}} alt="">
+        </div>
+      </div>
+    </div>
+
+    <img *ngIf="!flipped" class="sticker pl-3 img-fluid mx-auto d-block" src={{stickerImage}} alt="">
+
+    <!-- <img class="cardTypeVisa img-fluid mx-auto d-block" src={{cardTypeImages.amex}} alt=""> -->
+    <!-- <img class="cardTypeVisa img-fluid mx-auto d-block" src={{cardTypeImages.dinersclub}} alt=""> -->
+    <!-- <img class="cardTypeVisa img-fluid mx-auto d-block" src={{cardTypeImages.discover}} alt=""> -->
+    <!-- <img class="cardTypeVisa img-fluid mx-auto d-block" src={{cardTypeImages.jcb}} alt=""> -->
+    <!-- <img class="cardTypeVisa img-fluid mx-auto d-block" src={{cardTypeImages.mastercard}} alt=""> -->
+    <!-- <img class="cardTypeVisa img-fluid mx-auto d-block" src={{cardTypeImages.troy}} alt=""> -->
+    <!-- <img class="cardTypeVisa img-fluid mx-auto d-block" src={{cardTypeImages.unionpay}} alt=""> -->
+    <img *ngIf="!flipped" class="cardTypeVisa img-fluid mx-auto d-block" src={{cardTypeImg}} alt="">
+  <div class="creditCardFront" *ngIf="!flipped">
+    <svg class="cardNumber" width="300" height="40">
+      <rect *ngIf="cardNumberClicked" width="290" height="40" style="stroke:#ffffff;stroke-width:1.5;fill-opacity:0" />
+      <!-- <text x="10" y="15" fill="#ffffff">{{cardNumInput}}</text> -->
+      <text *ngIf="cardNumInput==''" x="15" y="25" 
+          id="svgnumber"
+          class="cardNumberInput">#### #### #### ####</text>
+      <text *ngIf="cardNumInput!=''" x="15" y="25" 
+          id="svgnumber"
+          class="cardNumberInput">{{cardNumberOnImage}}</text>
+    </svg>
+
+    <div class="row pl-1">
+      <div class="col-xs-8 ">
+        <svg class="cardHolderName" width="230" height="45">
+          <rect *ngIf="cardNameClicked" width="230" height="45" style="stroke:#ffffff;stroke-width:1.5;fill-opacity:0" />
+          <text x="10" y="16" 
+          id="svgnumber"
+          class="cardHolder">Card Holder</text>
+          <text *ngIf="cardNamInput==''" x="10" y="38" 
+          id="svgnumber"
+          class="cardHolderInput">XYZ</text>
+          <text *ngIf="cardNamInput!=''" x="10" y="38" 
+          id="svgnumber"
+          class="cardHolderInput">{{cardNamInput}}</text>
+        </svg>
+      </div>
+      <div class="col-xs-4 pr-1">
+        <svg class="cardExpDate" width="65" height="45">
+          <rect *ngIf="cardExpClicked" width="65" height="45" style="stroke:#ffffff;stroke-width:1.5;fill-opacity:0" />
+          <text x="10" y="16" 
+          id="svgnumber"
+          class="cardHolder">Expires</text>
+          <text x="10" y="38" 
+          id="svgnumber"
+          class="cardHolderInput">{{selectedExpMonth == "Month" ? "MM" : selectedExpMonth}}/{{selectedExpYear == "Year" ? "YY" : selectedExpYear%100}}</text>
+        </svg>
+      </div>
+    </div>    
+  </div>
+
+  <div class="creditCardBack" *ngIf="flipped">
+    <!-- <div *ngIf="showChild"> -->
+    <svg  width="319" height="150">
+      <rect width="318" height="40" style="fill:rgb(0, 0, 0);stroke-width:3;stroke:rgb(0,0,0)" />      
+      <text  x="285" y="75" 
+          id="svgnumber"
+          class="cardCVV">CVV</text>
+      <rect x="10" y="80" width="300" height="40" style="fill:rgb(255, 255, 255);stroke:#ffffff;stroke-width:1.5" />
+      <text  x="280" y="105" 
+          id="svgnumber"
+          class="cardCVVNumber">{{cardCVVNum}}</text>
+    </svg>
+    <img  class="cardTypeBack img-fluid mx-auto d-block" src={{cardTypeImg}} alt="">
+  <!-- </div> -->
+  </div>
+
+</div>

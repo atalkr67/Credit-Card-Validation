@@ -1,0 +1,51 @@
+<app-card [cardNumInput]="cardNumberInput" [cardNamInput]="cardNameInput" [cardNumberClicked]="onCardNumClicked" 
+[cardNameClicked]="onCardNameClicked" [cardExpClicked]="onCardExpClicked" [selectedExpMonth]="expMonth" 
+[selectedExpYear]="expYear" [flipped]="cardFlipped" [cardCVVNum]="cardCVVInput" [cardTypeImg]="cardTypeImage"></app-card>
+<div class="container card mb-2">
+    <!-- <div class=""> -->
+        <form action="/action_page.php">
+          <div class="form-group">
+            Card Number
+            <input id="cardnumber" name="cardnumber" type="text"  maxlength="16" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" class="form-control"  
+                   [(ngModel)]="cardNumberInput" (click)="cardFlipped=false;onCardNumClicked=true;onCardNameClicked=false;onCardExpClicked=false" (input)="getCardNumber($event)" required>
+            <!-- <input id="ccn" type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" placeholder="xxxx xxxx xxxx xxxx"> -->
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+          </div>
+          <div class="form-group pb-2">
+            Cardholder Name
+            <input type="text" oninput="this.value = this.value.replace(/[^A-Za-z' ''.]/g, '').replace(/(\..*)\./g, '$1');" class="form-control" maxlength="24" [(ngModel)]="cardNameInput" (click)="cardFlipped=false;onCardNumClicked=false;onCardNameClicked=true;onCardExpClicked=false" (change)="getCardName($event)" id="cardname" name="cardname" required>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+          </div>
+
+          <div class="form-group">            
+            <div class="row">
+                <div class="col-xs-8 col-sm-8">                  
+                  Expiration
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-6">
+                            <select class="form-control dropup" name="month" id="month" [(ngModel)]="expMonth" (click)="cardFlipped=false;onCardNumClicked=false;onCardNameClicked=false;onCardExpClicked=true">
+                              <option selected disabled>Month</option>
+                              <option *ngFor="let month of months" [ngValue]="month">{{month}}</option>
+                            </select>                            
+                        </div>  
+                        <div class="col-xs-6 col-sm-6"> 
+                          <select class="form-control" (click)="getYearInput();cardFlipped=false;onCardNumClicked=false;onCardNameClicked=false;onCardExpClicked=true" name="year" id="month" [(ngModel)]="expYear">
+                            <option selected disabled>Year</option>
+                            <option *ngFor="let year of years"[ngValue]="year">{{year}}</option>
+                          </select>  
+                        </div> 
+                    </div>            
+                </div>
+                <div class="col-xs-4 col-sm-4">
+                  CVV
+                    <input type="text" class="form-control" id="cvv" name="cvv" maxlength="3" [(ngModel)]="cardCVVInput" (change)="getCVVInput($event)" (click)="cardFlipped=true;">                   
+                </div>
+              </div>
+          </div>        
+          
+            <button type="submit" class="btn btn-primary btn-block">Submit</button>             
+        </form>
+      <!-- </div> -->
+</div>
