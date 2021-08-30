@@ -2,7 +2,7 @@
   div.card {
     border-radius: 8px;
     font-size: 14px;
-    padding-top: 120px;
+    padding-top: 140px;
     margin-top: 140px;
     height: 420px;
     width: 500px;
@@ -10,27 +10,9 @@
   }
 
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 550px) {
   div.card {
-    border-radius: 8px;
-    font-size: 14px;
-    padding-top: 140px;    
-    height: 440px;    
-    width: 500px;
-    margin-top: 140px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  }
-}
-
-@media screen and (max-width: 600px) {
-  div.card {
-    border-radius: 8px;
-    font-size: 14px;
-    padding-top: 140px;    
-    height: 440px;
-    width: 500px;
-    margin-top: 140px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 100%;
   }
 }
 
@@ -42,13 +24,7 @@
 // .col-2 {width: 33.33%;}
 // .col-3 {width: 33.33%;}
 
-  // .container {
-  //   margin-top: 8px;
-  //   margin-right: 24px;
-  //   margin-bottom: 16px;
-  //   padding-left: 24px;
-  //   padding-right: 24px;
-  // }
+  
   
   div.header {
     background-color: white;

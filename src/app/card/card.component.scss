@@ -4,6 +4,28 @@
       height: 100%;
       width: 100%;
   }
+
+  .label1 {
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    display: block;
+    width: 100%;
+    height: 220px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%,);
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  .card {
+    
+  }
+}
   
   .card {
     margin-left: auto;
@@ -113,11 +135,7 @@
       font-size: 24px;
     }
 
-    @media screen and (max-width: 600px) {
-      .cardNumberInput {
-        font-size: 24px;
-      }
-    }
+    
   
     .cardHolderName { 
       z-index: 1;   
@@ -147,22 +165,6 @@
       z-index: 1; 
       margin: 15px 10px 10px 5px;
     }
-  
-    .label1 {
-      -webkit-perspective: 1000px;
-      perspective: 1000px;
-      -webkit-transform-style: preserve-3d;
-      transform-style: preserve-3d;
-      display: block;
-      width: 100%;
-      height: 220px;
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      -webkit-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-      cursor: pointer;
-  }
   
   .player {
       position: relative;

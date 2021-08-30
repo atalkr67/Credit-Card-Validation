@@ -1,7 +1,10 @@
-<app-card [cardNumInput]="cardNumberInput" [cardNamInput]="cardNameInput" [cardNumberClicked]="onCardNumClicked" 
-[cardNameClicked]="onCardNameClicked" [cardExpClicked]="onCardExpClicked" [selectedExpMonth]="expMonth" 
-[selectedExpYear]="expYear" [flipped]="cardFlipped" [cardCVVNum]="cardCVVInput" [cardTypeImg]="cardTypeImage"></app-card>
-<div class="container card mb-2">
+
+<div>
+  <app-card [cardNumInput]="cardNumberInput" [cardNamInput]="cardNameInput" [cardNumberClicked]="onCardNumClicked" 
+  [cardNameClicked]="onCardNameClicked" [cardExpClicked]="onCardExpClicked" [selectedExpMonth]="expMonth" 
+  [selectedExpYear]="expYear" [flipped]="cardFlipped" [cardCVVNum]="cardCVVInput" [cardTypeImg]="cardTypeImage"></app-card>
+  
+  <div class="container card mb-2">
     <!-- <div class=""> -->
         <form action="/action_page.php">
           <div class="form-group">
@@ -48,4 +51,5 @@
             <button type="submit" class="btn btn-primary btn-block">Submit</button>             
         </form>
       <!-- </div> -->
+  </div>
 </div>
