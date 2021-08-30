@@ -21,11 +21,9 @@
     cursor: pointer;
 }
 
-@media screen and (max-width: 600px) {
-  .card {
-    
+  .rectRadius {
+    border-radius: 10px;
   }
-}
   
   .card {
     margin-left: auto;
@@ -103,21 +101,21 @@
   
     .cardTypeVisa {
       height: 40px;
-      width: 50px;
+      width: 70px;
       margin-top: 15px;
       position: absolute;
       top: 0px;
-      left: 80%;
+      left: 75%;
       z-index: 1;
     }
   
     .cardTypeBack {
       height: 40px;
-      width: 50px;
+      width: 70px;
       margin-top: 15px;
       position: absolute;
       top: 120px;
-      left: 80%;
+      left: 75%;
       z-index: 1;
     }
   

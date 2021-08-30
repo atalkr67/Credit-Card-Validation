@@ -9,7 +9,7 @@ import { CarddetailsComponent } from '../carddetails/carddetails.component'
 })
 export class CardComponent implements OnInit {
 
-  cardImage = '/assets/images/6.jpeg';
+  cardImage = '/assets/images/22.jpeg';
   stickerImage = '/assets/images/chip.png';
   cardTypeImages = {
     amex: '/assets/images/amex.png',
