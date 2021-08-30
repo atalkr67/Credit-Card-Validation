@@ -112,6 +112,12 @@
       font-weight: 10px;
       font-size: 25px;
     }
+
+    @media screen and (max-width: 600px) {
+      .cardNumberInput {
+        font-size: 24px;
+      }
+    }
   
     .cardHolderName { 
       z-index: 1;   
