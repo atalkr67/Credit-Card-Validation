@@ -20,17 +20,17 @@
           </div>
 
           <div class="form-group">            
-            <div class="row">
-                <div class="col-xs-8 col-sm-8">                  
+            <div class="row pl-1 pr-1">
+                <div class="col-8">                  
                   Expiration
                     <div class="row">
-                        <div class="col-xs-6 col-sm-6">
+                        <div class="col-6">
                             <select class="form-control dropup" name="month" id="month" [(ngModel)]="expMonth" (click)="cardFlipped=false;onCardNumClicked=false;onCardNameClicked=false;onCardExpClicked=true">
                               <option selected disabled>Month</option>
                               <option *ngFor="let month of months" [ngValue]="month">{{month}}</option>
                             </select>                            
                         </div>  
-                        <div class="col-xs-6 col-sm-6"> 
+                        <div class="col-6"> 
                           <select class="form-control" (click)="getYearInput();cardFlipped=false;onCardNumClicked=false;onCardNameClicked=false;onCardExpClicked=true" name="year" id="month" [(ngModel)]="expYear">
                             <option selected disabled>Year</option>
                             <option *ngFor="let year of years"[ngValue]="year">{{year}}</option>
@@ -38,9 +38,9 @@
                         </div> 
                     </div>            
                 </div>
-                <div class="col-xs-4 col-sm-4">
+                <div class="col-4">
                   CVV
-                    <input type="text" class="form-control" id="cvv" name="cvv" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="3" [(ngModel)]="cardCVVInput" (change)="getCVVInput($event)" (click)="cardFlipped=true;">                   
+                    <input type="text" class="form-control" id="cvv" name="cvv" oninput="this.value = this.value.replace(/[^0-9.]/g, '')" maxlength="3" [(ngModel)]="cardCVVInput" (change)="getCVVInput($event)" (click)="cardFlipped=true;">                   
                 </div>
               </div>
           </div>        
