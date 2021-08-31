@@ -45,11 +45,18 @@ export class CarddetailsComponent implements OnInit {
 
     // visa
     var re = new RegExp("^4");
-    if (this.cardNumberInput.match(re) != null)
+    if (this.cardNumberInput.match(re) != null){
         this.cardTypeImage = this.cardTypeImages.visa;
+        return;
+    }
 
+    //troy
+    // var re = new RegExp("^9");
+    if (this.cardNumberInput.match(new RegExp("^9")) != null){
+        this.cardTypeImage = this.cardTypeImages.troy;
+        return;
+    }
     // Mastercard 
-    // Updated for Mastercard 2017 BINs expansion
     re = new RegExp("^5[1-5][0-9]");
      if (this.cardNumberInput.match(re) != null) 
       this.cardTypeImage = this.cardTypeImages.mastercard;
@@ -60,7 +67,7 @@ export class CarddetailsComponent implements OnInit {
       this.cardTypeImage = this.cardTypeImages.amex;
 
     // Discover
-    re = new RegExp("^(6011|622(12[6-9]|1[3-9][0-9]|[2-8][0-9]{2}|9[0-1][0-9]|92[0-5]|64[4-9])|65)");
+    re = new RegExp("^(60[0-9])");
     if (this.cardNumberInput.match(re) != null)
       this.cardTypeImage = this.cardTypeImages.discover;
 
@@ -79,10 +86,10 @@ export class CarddetailsComponent implements OnInit {
     if (this.cardNumberInput.match(re) != null)
       this.cardTypeImage = this.cardTypeImages.jcb;
 
-    // Visa Electron
-    re = new RegExp("^(4026|417500|4508|4844|491(3|7))");
+    //unionpay
+    re = new RegExp("^(62[0-9])")
     if (this.cardNumberInput.match(re) != null)
-      this.cardTypeImage = this.cardTypeImages.visa;
+      this.cardTypeImage = this.cardTypeImages.unionpay;
 
   }
 
